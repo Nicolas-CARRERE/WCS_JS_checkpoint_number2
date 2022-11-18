@@ -5,11 +5,10 @@ import Cupcake from "@components/Cupcake";
 
 function CupcakeDetails() {
   const params = useParams();
-  console.log("params id", params.id);
 
   const [cupcake, setCupcake] = useState([]);
   useEffect(() => {
-    cupcakeFetcher.getCupcakeByID(`${params.id}`).then(function (response) {
+    cupcakeFetcher.getCupcakeByID(`${params.id}`).then((response) => {
       setCupcake(response);
     });
   }, []);
